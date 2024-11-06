@@ -1,0 +1,9 @@
+version: '3'
+services:
+  getgrass-bot:
+    build: .
+    container_name: getgrass-bot
+    volumes:
+      - ./uid.txt:/app/uid.txt  # Bind the uid file
+      - ./proxy.txt:/app/proxy.txt  # Bind the proxy file
+    restart: unless-stopped
